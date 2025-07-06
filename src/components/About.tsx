@@ -11,7 +11,7 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-[100px]">
           <h2 className="text-4xl md:text-5xl font-bold text-[#2C3188] mb-6">
             WELCOME TO IBS
           </h2>
@@ -36,12 +36,12 @@ const About: React.FC = () => {
               allowFullScreen
             />
           </div>
-          <div className="w-24 h-1 bg-[#F6E824] mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-[#F6E824] mx-auto rounded-full mb-18"></div>
         </div>
 
 
         {/* Main content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 mt-20">
           <div>
             <h3 className="text-3xl font-bold text-[#2C3188] mb-6">
               {currentLanguage === 'es' ? 'LO QUE NOS DISTINGUE' : 'Why choose IBS?'}

@@ -8,19 +8,19 @@ export const content: Record<'es' | 'en', Content> = {
         id: 'nosotros',
         label: 'Nosotros',
         children: [
-          { id: 'historia', label: 'Nuestra Historia', href: '/historia' },
-          { id: 'mision', label: 'Misión y Visión', href: '/mision' },
-          { id: 'directivos', label: 'Directivos', href: '/directivos' },
+          { id: 'historia', label: 'Nuestra Historia', href: '/' },
+          { id: 'mision', label: 'Misión y Visión', href: '/' },
+          { id: 'directivos', label: 'Directivos', href: '/' },
         ],
       },
       {
         id: 'academico',
         label: 'Académico',
         children: [
-          { id: 'preescolar', label: 'Preescolar', href: '/preescolar' },
-          { id: 'primaria', label: 'Primaria', href: '/primaria' },
-          { id: 'bachillerato', label: 'Bachillerato', href: '/bachillerato' },
-          { id: 'programas', label: 'Programas Especiales', href: '/programas' },
+          { id: 'preescolar', label: 'Preescolar', href: '/' },
+          { id: 'primaria', label: 'Primaria', href: '/' },
+          { id: 'bachillerato', label: 'Bachillerato', href: '/' },
+          { id: 'programas', label: 'Programas Especiales', href: '/' },
         ],
       },
       {
@@ -36,8 +36,8 @@ export const content: Record<'es' | 'en', Content> = {
         id: 'vida-escolar',
         label: 'Vida Escolar',
         children: [
-          { id: 'actividades', label: 'Actividades Extracurriculares', href: '/actividades' },
-          { id: 'galeria', label: 'Galería', href: '/galeria' },
+          { id: 'actividades', label: 'Actividades Extracurriculares', href: '/' },
+          { id: 'galeria', label: 'Galería', href: '/' },
         ],
       },
       { id: 'contacto', label: 'Contacto', href: '#contact' },

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Montserrat';
+  font-family: "Mona Sans", sans-serif;
 }
 
 @layer utilities {
