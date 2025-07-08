@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="relative !h-[40rem] flex items-center !justify-center overflow-hidden">
+      <section className="relative h-[52rem] md:h-[40rem] flex items-center !justify-center overflow-hidden">
         {/* Dynamic Background */}
         <div className="absolute inset-0 bg-gradient-to-br transition-all duration-1000">
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>

@@ -155,7 +155,7 @@ const Header: React.FC = () => {
               ))}
               <button
                 onClick={() => handleNavigation('#admissions')}
-                className="block bg-[#E31D28] text-white px-6 py-2 rounded-full hover:bg-[#c41e3a] transition-colors duration-200 font-medium text-center w-full"
+                className="block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-[#c41e3a] transition-colors duration-200 font-medium text-center w-full"
               >
                 {currentContent.hero.admissionsButton}
               </button>

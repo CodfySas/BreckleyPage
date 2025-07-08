@@ -108,10 +108,10 @@ const Admissions: React.FC = () => {
       <section className="relative flex items-center justify-center overflow-hidden w-full max-h-[650px]">
         <img src='images/primary-full.png' className='!w-full !h-full' />
 
-        <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white absolute bottom-28">
-          <h1 className="text-5xl md:text-8xl font-medium mb-6">
+        <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white absolute bottom-1 md:bottom-28">
+          <h1 className="text-3xl md:text-8xl font-medium mb-6">
             ¡BIENVENIDOS!
-            <span className="block text-3xl md:text-4xl mt-4">
+            <span className="block text-xl md:text-4xl mt-4">
               Al International Berckley school
             </span>
           </h1>
@@ -226,15 +226,15 @@ const Admissions: React.FC = () => {
           <img src='images/prees-full.png' className='!w-full !h-full' />
 
           <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white absolute">
-            <h1 className="text-5xl md:text-6xl font-medium mb-6">
+            <h1 className="text-xl md:text-6xl font-medium mb-6">
               ¡APLICA AHORA!
-              <span className="block text-2xl md:text-2xl mt-4">
+              <span className="block text-sm md:text-2xl mt-4">
                 ¡Te estamos esperando!
               </span>
             </h1>
             <a
               href='/'
-              className="bg-[#2C3188] text-white px-7 py-3 rounded-md hover:bg-[#3f4399] transition-colors duration-200"
+              className="bg-[#2C3188] text-sm md:text-md text-white px-7 py-3 rounded-md hover:bg-[#3f4399] transition-colors duration-200"
             >
               INICIA TU PROCESO AQUI
             </a>

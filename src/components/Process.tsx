@@ -209,7 +209,7 @@ const Process: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#E31D28] text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#c41e3a] transition-colors duration-300 flex items-center justify-center space-x-2"
+                  className="w-full bg-orange-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#c41e3a] transition-colors duration-300 flex items-center justify-center space-x-2"
                 >
                   <Send className="h-5 w-5" />
                   <span>Enviar Mensaje</span>
