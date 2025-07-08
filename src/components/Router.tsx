@@ -7,6 +7,8 @@ import Programs from './pages/Programs';
 import Activities from './pages/Activities';
 import Gallery from './pages/Gallery';
 import AcademicProgram from './pages/AcademicProgram';
+import Admissions from './Admissions';
+import Process from './Process';
 
 interface RouterProps {
   currentPath: string;
@@ -20,6 +22,12 @@ const Router: React.FC<RouterProps> = ({ currentPath }) => {
 
   // Handle both Spanish and English routes
   switch (cleanPath) {
+    case 'admissions':
+    case 'admisiones':
+      return <Admissions />;
+    case 'process':
+    case 'proceso':
+      return <Process />;
     case 'historia':
     case 'history':
       return <History />;

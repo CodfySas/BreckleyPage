@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Play, Award, Globe, Users, ChevronLeft, ChevronRight, BookOpen, Trophy, Star, GraduationCap, Heart, Lightbulb, Shield, Target, Zap, ListRestart, Brain, RefreshCcw, Layers3, BookOpenCheck, School, Globe2 } from 'lucide-react';
+import { ArrowRight, Play, Award, Globe, Users, ChevronLeft, ChevronRight, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { content } from '../data/content';
 
@@ -9,87 +9,31 @@ const Hero: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
   const [isTransitioning, setIsTransitioning] = useState(false);
-
 
   // Slides data
   const slides = [
     {
-      id: 1,
-      title: 'International Berckley School',
-      subtitle: 'Excelencia Educativa Internacional',
-      description: 'Formamos seres humanos integrales capaces de desarrollarse en un entorno globalizado y tecnificado.',
-      background: 'from-[#1d3e6d] via-[#7180a1] to-[#c7dce6]',
+      url: 'images/home.png',
       icon: GraduationCap,
-      highlights: [
-        {
-          icon: Award,
-          title: 'Excelencia academica',
-          desc: 'Currículo de primer nivel y docentes certificados'
-        },
-        {
-          icon: Heart,
-          title: 'Formación en Valores',
-          desc: 'Educación basada en valores para la vida'
-        },
-        {
-          icon: Globe2,
-          title: 'Excelencia Internacional',
-          desc: 'Certificación ISO-9001:2008 y Certificación 1B'
-        }
-      ]
+      id: 0,
+      title1: 'Excelencia',
+      title2: 'Educativa',
+      title3: 'Internacional',
+      subtitle: 'Formamos seres humanos integrales capaces de desarrollarse en un entorno globalizado y tecnificado.',
+      description: true,
+      button1: 'Conoce Más',
+      button2: 'Iniciar proceso'
     },
     {
-      id: 2,
-      title: 'Educación que trasciende fronteras',
-      subtitle: 'Formamos mentes bilingües con visión internacional',
-      description: 'Desde preescolar nuestros niños aprenden inglés y español, desarrollando habilidades para destacar en un mundo sin fronteras',
-      background: 'from-[#f6e824] via-[#e31d28] to-[#2c3188]',
-      icon: Lightbulb,
-      highlights: [
-        {
-          icon: BookOpenCheck,
-          title: 'Doble lectoescritura',
-          desc: 'Nuestros estudiantes llegan a primaria leyendo y escribiendo en ingles y español'
-        },
-        {
-          icon: School,
-          title: 'Primaria Innovadora',
-          desc: 'Docentes facilitadores y herramientas educativas de vanguardia'
-        },
-        {
-          icon: Globe,
-          title: 'Certificación Cambridge',
-          desc: 'Programas internacionales reconocidos'
-        }
-      ]
+      url: 'images/home2.jpg',
+      icon: GraduationCap,
+      id: 1,
+      title1: 'Admisiones',
+      title2: 'Abiertas',
+      subtitle: 'Te invitamos a ser parte de una comunidad educativa comprometida con la formación integral, bilingüe y con estándares internacionales.',
+      button1: 'Conoce Más',
     },
-    {
-      id: 3,
-      title: 'Proyecto de AULA Integrador (PAI)',
-      subtitle: 'Motivamos, integramos y fortalecemos el aprendizaje',
-      description: 'Una estrategia didactica que despierta el interes del estudiante, conecta areas del conocimiento y refuerza actividades investigativas.',
-      background: 'from-[#6a3f1e] via-[#b5945f] to-[#e4d7c2]',
-      icon: Users,
-      highlights: [
-        {
-          icon: RefreshCcw,
-          title: 'Reteaching',
-          desc: 'Refuerzo semanal en Language Arts según las necesidades del grupo'
-        },
-        {
-          icon: Brain,
-          title: 'Socioafectividad',
-          desc: 'Encuentros quincenales para fortalecer la inteligencia emocional'
-        },
-        {
-          icon: Layers3,
-          title: 'Integración de Saberes',
-          desc: 'Aprendizaje significativo a través de la conexión entre áreas'
-        }
-      ]
-    }
   ];
 
   // Auto-play functionality
@@ -127,7 +71,6 @@ const Hero: React.FC = () => {
   };
 
   const goToSlide = (index: number) => {
-    console.log(index);
     if (isTransitioning || index === currentSlide) return;
     setIsTransitioning(true);
     setTimeout(() => {
@@ -138,14 +81,13 @@ const Hero: React.FC = () => {
   };
 
   const currentSlideData = slides[currentSlide];
-  const IconComponent = currentSlideData.icon;
 
   return (
-    <div className="h-[120vh] md:h-[100vh] bg-gray-50">
+    <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-full flex items-center !justify-center overflow-hidden">
+      <section className="relative !h-[40rem] flex items-center !justify-center overflow-hidden">
         {/* Dynamic Background */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${currentSlideData.background} transition-all duration-1000`}>
+        <div className="absolute inset-0 bg-gradient-to-br transition-all duration-1000">
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         </div>
 
@@ -173,6 +115,7 @@ const Hero: React.FC = () => {
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
           className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 backdrop-blur-md md:p-4 p-2 rounded-full hover:bg-opacity-30 transition-all duration-300 hover:scale-110"
@@ -187,67 +130,155 @@ const Hero: React.FC = () => {
           <ChevronRight className="h-6 w-6 text-white" />
         </button>
 
-        <div className="relative z-10 max-w-7xl h-full p-5 mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`max-w-5xl mx-auto transition-all duration-500 ${isTransitioning ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
-            }`}>
-            <div className="md:mb-8 flex justify-center">
-              <div className="bg-white bg-opacity-20 backdrop-blur-md p-2 rounded-full animate-pulse">
-                <IconComponent className="h-8 w-8 text-white" />
+        {/* Multiple Background Images for Smooth Transitions */}
+        <div className="absolute inset-0">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: `url(${slide.url})`,
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-blue-900/50" />
+            </div>
+          ))}
+        </div>
+
+        {/* Content Section */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            {/* Left Content */}
+            <div className="text-white space-y-8">
+              {/* Main heading with smooth transitions */}
+              <div className="space-y-4 md:px-12">
+                <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center md:text-left transition-all duration-700 transform ${
+                  isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                }`}>
+                  {currentSlideData.title1 && (
+                    <span className="block text-white">{currentSlideData.title1}</span>
+                  )}
+                  {currentSlideData.title2 && (
+                    <span className="block bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                      {currentSlideData.title2}
+                    </span>
+                  )}
+                  {currentSlideData.title3 && (
+                    <span className="block text-white">{currentSlideData.title3}</span>
+                  )}
+                </h1>
+
+                <p className={`text-xl md:text-2xl text-blue-100 max-w-2xl leading-relaxed text-center md:text-left transition-all duration-700 delay-100 transform ${
+                  isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                }`}>
+                  {currentSlideData.subtitle}
+                </p>
+              </div>
+
+              {/* Stats row */}
+              {currentSlideData.description && (
+                <div className={`flex flex-wrap gap-8 py-6 justify-center items-center transition-all duration-700 delay-200 transform ${
+                  isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                }`}>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-amber-500">+800</div>
+                    <div className="text-sm text-blue-200">Estudiantes</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-amber-500">+15</div>
+                    <div className="text-sm text-blue-200">Prom. graduadas</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-amber-500">20</div>
+                    <div className="text-sm text-blue-200">Tamaño de la clase</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-amber-500">1</div>
+                    <div className="text-sm text-blue-200">Condecoración</div>
+                  </div>
+                </div>
+              )}
+
+              {/* CTA Buttons */}
+              <div className={`flex flex-col sm:flex-row gap-4 md:px-12 transition-all duration-700 delay-300 transform ${
+                isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+              }`}>
+                {currentSlideData.button1 && (
+                  <button className="group bg-white backdrop-blur-sm text-black px-8 py-4 rounded-full font-bold text-lg border-2 border-white/30 hover:bg-white/20 transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>{currentSlideData.button1}</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                )}
+                {currentSlideData.button2 && (
+                  <button className="group bg-gradient-to-r from-amber-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                    <span>{currentSlideData.button2}</span>
+                    <Play className="w-5 h-5" />
+                  </button>
+                )}
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 text-white animate-fade-in-up">
-              <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                {currentSlideData.title}
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <h2 className="text-xl md:text-2xl text-[#F6E824] lg:text-3xl font-semibold mb-4 animate-fade-in-up delay-200">
-              {currentSlideData.subtitle}
-            </h2>
-
-            {/* Description */}
-            <p className="text-sm md:text-md mb-8 max-w-4xl mx-auto leading-relaxed text-gray-200 animate-fade-in-up delay-400">
-              {currentSlideData.description}
-            </p>
-
-            {/* Key Highlights */}
-            <div style={{justifyItems: 'center'}} className="grid md:grid-cols-3 gap-8 mb-6 animate-fade-in-up delay-600 !justify-center items-center">
-              {currentSlideData.highlights.map((highlight, index) => {
-                const HighlightIcon = highlight.icon;
-                return (
-                  <div
-                    key={index}
-                    className="w-[80%] md:w-auto bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-2xl border border-white border-opacity-20 transform hover:scale-105 transition-all duration-500 hover:bg-opacity-20"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="bg-white bg-opacity-20 p-2 hidden md:block rounded-full w-fit mx-auto mb-4">
-                      <HighlightIcon className="h-4 w-4 text-white" />
-                    </div>
-                    <h3 className="md:text-xl font-bold mb-1 text-sm text-[#F6E824] ">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-gray-200 md:text-sm text-xs leading-relaxed">
-                      {highlight.desc}
-                    </p>
+            {/* Right Content - Logo and Visual Elements */}
+            {currentSlide === 0 && (
+              <div className={`relative items-center justify-center hidden lg:flex transition-all duration-700 delay-400 transform ${
+                isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+              }`}>
+                {/* Main logo container */}
+                <div className="relative">
+                  {/* Animated rings */}
+                  <div className="absolute inset-0 -m-8">
+                    <div className="w-full h-full border-2 border-yellow-400/30 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
                   </div>
-                );
-              })}
-            </div>
+                  <div className="absolute inset-0 -m-16">
+                    <div className="w-full h-full border border-red-500/20 rounded-full animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}></div>
+                  </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-800">
-              <button className="group bg-white text-gray-900 px-5 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 shadow-2xl">
-                <span>Conoce más</span>
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+                  {/* Logo */}
+                  <div className="relative bg-white/10 backdrop-blur-sm p-8 rounded-full border border-white/20 shadow-2xl">
+                    <img
+                      src="/images/logo.png"
+                      alt="International Berckley School"
+                      className="h-32 w-32 md:h-40 md:w-40 object-contain drop-shadow-2xl"
+                    />
+                  </div>
 
-              <button className="group bg-gradient-to-r from-red-600 to-red-500 text-white px-5 py-3 rounded-full font-bold text-lg hover:from-red-500 hover:to-red-400 transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 shadow-2xl">
-                <span>Iniciar Proceso</span>
-                <Play className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </div>
+                  {/* Floating badges */}
+                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-amber-400 to-red-500 p-3 rounded-full shadow-lg animate-bounce">
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+
+                  <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-full shadow-lg animate-pulse">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* Achievement cards */}
+                <div className="absolute top-0 right-0 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                  <div className="text-center">
+                    <Award className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                    <div className="text-sm font-semibold text-white">Acreditación</div>
+                    <div className="text-xs text-blue-200">Internacional</div>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-0 left-0 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                  <div className="text-center">
+                    <img
+                      src="/images/ib.png"
+                      alt="International Berckley School"
+                      className="h-12 w-12 mx-auto mb-2"
+                    />
+                    <div className="text-sm font-semibold text-white">Programa</div>
+                    <div className="text-xs text-blue-200">IB Diploma</div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -257,10 +288,11 @@ const Hero: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-4 h-4 rounded-full transition-all cursor-pointer duration-300 ${index === currentSlide
-                ? 'bg-white scale-125 shadow-lg'
-                : 'bg-white bg-opacity-50 hover:bg-opacity-75'
-                }`}
+              className={`w-4 h-4 rounded-full transition-all cursor-pointer duration-300 ${
+                index === currentSlide
+                  ? 'bg-white scale-125 shadow-lg'
+                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              }`}
             />
           ))}
         </div>
@@ -276,7 +308,7 @@ const Hero: React.FC = () => {
         {/* Auto-play Toggle */}
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className="absolute top-6 left-6 bg-white bg-opacity-20 backdrop-blur-md p-3 rounded-full hover:bg-opacity-30 transition-all duration-300 hover:scale-110"
+          className="absolute top-6 left-6 bg-white bg-opacity-20 z-50 backdrop-blur-md p-3 rounded-full hover:bg-opacity-30 transition-all duration-300 hover:scale-110"
         >
           {isAutoPlaying ? (
             <div className="w-4 h-4 bg-white rounded-sm" />
@@ -284,15 +316,9 @@ const Hero: React.FC = () => {
             <Play className="h-4 w-4 text-white" />
           )}
         </button>
-
-        <img className="absolute top-5 right-5 w-12 md:top-6 md:right-6 md:w-20" src="images/ib.png" />
       </section>
-      
     </div>
-    
   );
 };
-// 6. Agregar el style tag en tu JSX (opcional si ya tienes las clases)
-
 
 export default Hero;

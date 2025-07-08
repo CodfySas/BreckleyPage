@@ -14,6 +14,15 @@ export const content: Record<'es' | 'en', Content> = {
         ],
       },
       {
+        id: 'admisiones',
+        label: 'Admisiones',
+        children: [
+          { id: 'info', label: 'Información General', href: '/admissions' },
+          { id: 'proceso', label: 'Proceso de Admisión', href: '/process' },
+          { id: 'costos', label: 'Subir documentos', href: '/' },
+        ],
+      },
+      {
         id: 'academico',
         label: 'Académico',
         children: [
@@ -21,15 +30,6 @@ export const content: Record<'es' | 'en', Content> = {
           { id: 'primaria', label: 'Primaria', href: '/' },
           { id: 'bachillerato', label: 'Bachillerato', href: '/' },
           { id: 'programas', label: 'Programas Especiales', href: '/' },
-        ],
-      },
-      {
-        id: 'admisiones',
-        label: 'Admisiones',
-        children: [
-          { id: 'proceso', label: 'Proceso de Admisión', href: '#admissions' },
-          { id: 'requisitos', label: 'Requisitos', href: '#admissions' },
-          { id: 'costos', label: 'Costos y Becas', href: '#contact' },
         ],
       },
       {

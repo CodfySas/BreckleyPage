@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Globe, Heart, Lightbulb, Users, BookOpen, GraduationCap, Monitor, LayoutGrid, Group, BarChart2, LayoutList, School } from 'lucide-react';
+import { Award, Users, BookOpen } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { content } from '../data/content';
 
@@ -52,8 +52,8 @@ const About: React.FC = () => {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="bg-[#F6E824] p-2 rounded-full mt-1">
-                  <BookOpen className="h-4 w-4 text-[#2C3188]" />
+                <div className="bg-yellow-600 p-2 rounded-full mt-1">
+                  <BookOpen className="h-4 w-4 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-[#2C3188] mb-1">
@@ -69,7 +69,7 @@ const About: React.FC = () => {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="bg-[#E31D28] p-2 rounded-full mt-1">
+                <div className="bg-orange-500 p-2 rounded-full mt-1">
                   <Users className="h-4 w-4 text-white" />
                 </div>
                 <div>
@@ -110,52 +110,12 @@ const About: React.FC = () => {
               alt="Students learning"
               className="rounded-lg shadow-xl w-full h-120 object-cover"
             />
-            <div className="absolute -bottom-6 -left-6 bg-[#F6E824] p-6 rounded-lg shadow-lg">
-              <div className="text-3xl font-bold text-[#2C3188]">40+</div>
-              <div className="text-sm text-gray-700 font-medium">
+            <div className="absolute -bottom-6 -left-6 bg-orange-500 p-6 rounded-lg shadow-lg">
+              <div className="text-3xl font-bold text-white">40+</div>
+              <div className="text-sm text-gray-200 font-medium">
                 {currentLanguage === 'es' ? 'Años de Experiencia' : 'Years of Experience'}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Values */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div
-            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group"
-          >
-            <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Users className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-[#2C3188] mb-4">+800</h3>
-            <p className="text-gray-600 leading-relaxed">Estudiantes Activos</p>
-          </div>
-          <div
-            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group"
-          >
-            <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <GraduationCap className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-[#2C3188] mb-4">+15</h3>
-            <p className="text-gray-600 leading-relaxed">Promociones Graduadas</p>
-          </div>
-          <div
-            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group"
-          >
-            <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <School className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-[#2C3188] mb-4">20</h3>
-            <p className="text-gray-600 leading-relaxed">Tamaño promedio de la clase</p>
-          </div>
-          <div
-            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group"
-          >
-            <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Award className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-[#2C3188] mb-4">1</h3>
-            <p className="text-gray-600 leading-relaxed">Condecoración Puerta de Oro Colombia</p>
           </div>
         </div>
       </div>

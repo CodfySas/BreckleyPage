@@ -162,7 +162,6 @@ a:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #F6E824;
   outline-offset: 2px;
 }
 

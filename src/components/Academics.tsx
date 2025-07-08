@@ -84,15 +84,15 @@ const Academics: React.FC = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-[#F6E824] mb-2">Cambridge</div>
+              <div className="text-3xl font-bold text-amber-400 mb-2">Cambridge</div>
               <div className="text-sm">{currentLanguage === 'es' ? 'Certificación' : 'Certification'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#F6E824] mb-2">IB</div>
+              <div className="text-3xl font-bold text-amber-400 mb-2">IB</div>
               <div className="text-sm">{currentLanguage === 'es' ? 'Bachillerato Internacional' : 'International Baccalaureate'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#F6E824] mb-2">Proyectos</div>
+              <div className="text-3xl font-bold text-amber-400 mb-2">Proyectos</div>
               <div className="text-sm">{currentLanguage === 'es' ? 'Indagación y pensamiento crítico' : 'Methodology'}</div>
             </div>
           </div>

@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
               transition={{ delay: index * 0.2 }}
               className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative"
             >
-              <Quote className="h-8 w-8 text-[#F6E824] mb-4" />
+              <Quote className="h-8 w-8 text-amber-500 mb-4" />
               
               <p className="text-gray-600 leading-relaxed mb-6 italic">
                 "{testimonial.content}"

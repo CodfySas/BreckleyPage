@@ -60,8 +60,8 @@ const Contact: React.FC = () => {
 
               {/* Email */}
               <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                <div className="bg-[#F6E824] p-3 rounded-full">
-                  <Mail className="h-6 w-6 text-[#2C3188]" />
+                <div className="bg-orange-500 p-3 rounded-full">
+                  <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#2C3188] mb-2">Email</h4>
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#E31D28] text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#c41e3a] transition-colors duration-300 flex items-center justify-center space-x-2"
+                className="w-full bg-orange-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-orange-400 transition-colors duration-300 flex items-center justify-center space-x-2"
               >
                 <Send className="h-5 w-5" />
                 <span>{currentLanguage === 'es' ? 'Enviar Mensaje' : 'Send Message'}</span>

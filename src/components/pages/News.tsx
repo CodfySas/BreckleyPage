@@ -45,8 +45,8 @@ const newsData: NewsArticle[] = [
     },
     {
         id: 4,
-        title: "Convenio con Universidad de Harvard",
-        excerpt: "Firmamos un acuerdo de cooperación académica con Harvard University para programas de intercambio estudiantil y colaboración en investigación.",
+        title: "Convenio con Universidad de Barranquilla",
+        excerpt: "Firmamos un acuerdo de cooperación académica con Baranquilla University para programas de apyo estudiantil y colaboración en investigación.",
         author: "Rector Dr. Juan Pérez",
         date: "2024-01-08",
         category: "Convenios",
@@ -55,8 +55,8 @@ const newsData: NewsArticle[] = [
     },
     {
         id: 5,
-        title: "Resultados del Ranking Nacional Universitario",
-        excerpt: "Nuestra institución escala posiciones en el ranking nacional de universidades, destacando en áreas de investigación y calidad educativa.",
+        title: "Resultados del Ranking Nacional",
+        excerpt: "Nuestra institución escala posiciones en el ranking nacional, destacando en áreas de investigación y calidad educativa.",
         author: "Oficina de Comunicaciones",
         date: "2024-01-05",
         category: "Reconocimientos",

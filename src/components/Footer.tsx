@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ArrowUpCircle } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowUpCircle } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { content } from '../data/content';
 
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <img
-                src="/images/logo berckley cs 4 (1).png"
+                src="/images/logo.png"
                 alt="International Berckley School"
                 className="h-12 w-12 object-contain"
               />

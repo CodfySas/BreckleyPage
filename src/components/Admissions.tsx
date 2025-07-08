@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, CheckCircle, Users, Award } from 'lucide-react';
+import { FileText, CheckCircle, Users, Award, BookOpen, Brain, Compass, Eye, Globe, Handshake, Heart, Leaf, Lightbulb, Music, Rocket, Shield, Star, Target, Trophy, Zap } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { content } from '../data/content';
 
@@ -9,117 +9,237 @@ const Admissions: React.FC = () => {
 
   const processIcons = [FileText, CheckCircle, Users, Award];
 
+  const values = [
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "Excelencia Académica",
+      description: "Estándares internacionales de calidad educativa"
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      title: "Mentalidad Global",
+      description: "Perspectiva internacional y multicultural"
+    },
+    {
+      icon: <Users className="w-5 h-5" />,
+      title: "Comunidad Inclusiva",
+      description: "Diversidad y respeto por todas las culturas"
+    },
+    {
+      icon: <BookOpen className="w-5 h-5" />,
+      title: "Aprendizaje Continuo",
+      description: "Pasión por el conocimiento y la investigación"
+    },
+    {
+      icon: <Lightbulb className="w-5 h-5" />,
+      title: "Innovación Pedagógica",
+      description: "Metodologías educativas de vanguardia"
+    },
+    {
+      icon: <Heart className="w-5 h-5" />,
+      title: "Desarrollo Emocional",
+      description: "Inteligencia emocional y bienestar integral"
+    },
+    {
+      icon: <Target className="w-5 h-5" />,
+      title: "Orientación a Resultados",
+      description: "Metas claras y logros medibles"
+    },
+    {
+      icon: <Zap className="w-5 h-5" />,
+      title: "Liderazgo Dinámico",
+      description: "Formación de líderes transformadores"
+    },
+    {
+      icon: <Shield className="w-5 h-5" />,
+      title: "Integridad Moral",
+      description: "Valores éticos sólidos y transparencia"
+    },
+    {
+      icon: <Star className="w-5 h-5" />,
+      title: "Excelencia Personal",
+      description: "Desarrollo del máximo potencial individual"
+    },
+    {
+      icon: <Compass className="w-5 h-5" />,
+      title: "Pensamiento Crítico",
+      description: "Análisis profundo y toma de decisiones"
+    },
+    {
+      icon: <Trophy className="w-5 h-5" />,
+      title: "Espíritu Competitivo",
+      description: "Superación constante y logro de metas"
+    },
+    {
+      icon: <Brain className="w-5 h-5" />,
+      title: "Desarrollo Cognitivo",
+      description: "Estimulación del pensamiento superior"
+    },
+    {
+      icon: <Handshake className="w-5 h-5" />,
+      title: "Colaboración Efectiva",
+      description: "Trabajo en equipo y cooperación"
+    },
+    {
+      icon: <Eye className="w-5 h-5" />,
+      title: "Visión de Futuro",
+      description: "Preparación para los desafíos del mañana"
+    },
+    {
+      icon: <Rocket className="w-5 h-5" />,
+      title: "Espíritu Emprendedor",
+      description: "Iniciativa y creatividad empresarial"
+    },
+    {
+      icon: <Leaf className="w-5 h-5" />,
+      title: "Conciencia Ambiental",
+      description: "Responsabilidad ecológica y sostenibilidad"
+    },
+    {
+      icon: <Music className="w-5 h-5" />,
+      title: "Expresión Artística",
+      description: "Desarrollo de talentos creativos y culturales"
+    }
+  ];
+
   return (
-    <section id="admissions" className="py-20 bg-gray-50">
+
+    <section id="admissions" className="">
+      <section className="relative flex items-center justify-center overflow-hidden w-full max-h-[650px]">
+        <img src='images/primary-full.png' className='!w-full !h-full' />
+
+        <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white absolute bottom-28">
+          <h1 className="text-5xl md:text-8xl font-medium mb-6">
+            ¡BIENVENIDOS!
+            <span className="block text-3xl md:text-4xl mt-4">
+              Al International Berckley school
+            </span>
+          </h1>
+        </div>
+      </section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2C3188] mb-6">
-            {currentContent.admissions.title}
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            {currentContent.admissions.subtitle}
-          </p>
-          <div className="w-24 h-1 bg-[#F6E824] mx-auto rounded-full"></div>
-        </div>
+        <section id="nosotros" className="pt-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <div className="inline-block bg-[#2C3188]/10 text-[#2C3188] px-4 py-2 rounded-full text-sm font-semibold">
+                    Desde 1985 • 40 años de excelencia
+                  </div>
 
-        {/* Process Steps */}
-        <div className="mb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {currentContent.admissions.process.map((step, index) => {
-              const Icon = processIcons[index];
-              return (
-                <div key={index} className="relative">
-                  {/* Connection line */}
-                  {index < currentContent.admissions.process.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[#2C3188] to-[#7180A1] transform translate-x-4 z-0"></div>
-                  )}
-                  
-                  <div className="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group z-10">
-                    {/* Step number */}
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#E31D28] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
-                      {step.step}
-                    </div>
-                    
-                    {/* Icon */}
-                    <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-8 w-8 text-white" />
-                    </div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl font-bold text-[#2C3188] mb-4">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Una Tradición de
+                    <span className="block text-[#2C3188]">Excelencia Académica</span>
+                  </h2>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Formar seres humanos integrales capaces de desarrollarse en un entorno globalizado y tecnificado, basados en valores éticos, morales, religiosos, deportivos y culturales, con una comunicación trilingüe (Español, Inglés y Francés) que les permita interactuar en cualquier lugar del mundo.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-orange-500/30 p-6 rounded-xl">
+                    <div className="text-2xl font-bold text-[#2C3188] mb-2">13+</div>
+                    <div className="text-sm text-gray-600">Años como colegio IB autorizado</div>
+                  </div>
+                  <div className="bg-red-500/20 p-6 rounded-xl">
+                    <div className="text-2xl font-bold text-[#E31D28] mb-2">100%</div>
+                    <div className="text-sm text-gray-600">Graduados Bilingües Certificados</div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              </div>
 
-        {/* Requirements and CTA */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Requirements */}
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-[#2C3188] mb-6 flex items-center">
-              <CheckCircle className="h-6 w-6 mr-3 text-[#E31D28]" />
-              {currentContent.admissions.requirements.title}
-            </h3>
-            <ul className="space-y-4">
-              {currentContent.admissions.requirements.items.map((item, index) => (
-                <li key={index} className="flex items-start space-x-3">
-                  <div className="bg-[#F6E824] p-1 rounded-full mt-1">
-                    <CheckCircle className="h-4 w-4 text-[#2C3188]" />
-                  </div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CTA Section */}
-          <div className="bg-gradient-to-br from-[#2C3188] to-[#7180A1] p-8 rounded-xl text-white">
-            <h3 className="text-2xl font-bold mb-6">
-              {currentLanguage === 'es' ? '¿Listo para comenzar?' : 'Ready to start?'}
-            </h3>
-            <p className="text-lg mb-8 opacity-90">
-              {currentLanguage === 'es' 
-                ? 'Inicia el proceso de admisión hoy y forma parte de nuestra comunidad educativa de excelencia.'
-                : 'Start the admission process today and become part of our educational community of excellence.'
-              }
-            </p>
-            
-            <div className="space-y-4">
-              <a
-                href="#contact"
-                className="block w-full bg-[#E31D28] text-white py-4 px-6 rounded-lg font-semibold text-center hover:bg-[#c41e3a] transition-colors duration-300"
-              >
-                {currentLanguage === 'es' ? 'Iniciar Proceso' : 'Start Process'}
-              </a>
-              
-              <a
-                href="tel:+5712345678"
-                className="block w-full bg-white text-[#2C3188] py-4 px-6 rounded-lg font-semibold text-center hover:bg-gray-100 transition-colors duration-300"
-              >
-                {currentLanguage === 'es' ? 'Llamar Ahora' : 'Call Now'}
-              </a>
-            </div>
-
-            {/* Contact info */}
-            <div className="mt-8 pt-8 border-t border-white border-opacity-20">
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <div className="font-semibold mb-1">{currentLanguage === 'es' ? 'Teléfono' : 'Phone'}</div>
-                  <div className="opacity-90">+57 (1) 234-5678</div>
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-4">
+                  <img src="https://images.pexels.com/photos/8471781/pexels-photo-8471781.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Students" className="rounded-xl object-cover h-48" />
+                  <img src="https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Campus" className="rounded-xl object-cover h-48 mt-8" />
+                  <img src="https://images.pexels.com/photos/8471916/pexels-photo-8471916.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Laboratory" className="rounded-xl object-cover h-48 -mt-8" />
+                  <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Library" className="rounded-xl object-cover h-48" />
                 </div>
-                <div>
-                  <div className="font-semibold mb-1">Email</div>
-                  <div className="opacity-90">admissions@berckleyschool.edu.co</div>
+
+                {/* Accreditation Badges */}
+                <div className="absolute -bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg border">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-[#2C3188] rounded-lg flex items-center justify-center text-white font-bold text-sm">IB</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section id="valores" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-[#2C3188]/10 text-[#2C3188] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Nuestros Pilares Fundamentales
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Valores que nos <span className="text-[#2C3188]">Definen</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Cada valor representa nuestro compromiso con la formación integral de estudiantes excepcionales,
+                preparados para liderar en un mundo globalizado y en constante evolución.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {values.map((value, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 group cursor-pointer"
+                >
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-400 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {value.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-sm mb-1 leading-tight">{value.title}</h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">{value.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="campus" className="bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-[#2C3188]">
+                Nuestro campus
+              </h2>
+              <div>
+                <iframe className='w-full min-h-[400px]' src="https://www.youtube.com/embed/kTFnBzqR310" title="International Berckley School | #IBS" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
+      <section className="relative flex items-center justify-center overflow-hidden w-full max-h-[350px]">
+          <img src='images/prees-full.png' className='!w-full !h-full' />
+
+          <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white absolute">
+            <h1 className="text-5xl md:text-6xl font-medium mb-6">
+              ¡APLICA AHORA!
+              <span className="block text-2xl md:text-2xl mt-4">
+                ¡Te estamos esperando!
+              </span>
+            </h1>
+            <a
+              href='/'
+              className="bg-[#2C3188] text-white px-7 py-3 rounded-md hover:bg-[#3f4399] transition-colors duration-200"
+            >
+              INICIA TU PROCESO AQUI
+            </a>
+          </div>
+        </section>
     </section>
   );
 };

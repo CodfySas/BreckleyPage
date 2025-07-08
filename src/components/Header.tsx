@@ -40,13 +40,13 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-lg sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
             <img 
-              src="/images/logo berckley cs 4 (1).png" 
+              src="/images/logo.png" 
               alt="International Berckley School" 
               className="h-12 w-12 object-contain"
             />
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
                 {item.children ? (
                   <div>
                     <button
-                      className="flex items-center space-x-1 text-gray-700 hover:text-[#2C3188] transition-colors duration-200 font-medium"
+                      className="flex items-center space-x-1 text-gray-700 hover:text-[#2C3188] transition-colors duration-200"
                       onClick={() => toggleDropdown(item.id)}
                     >
                       <span>{item.label}</span>
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
                           <button
                             key={child.id}
                             onClick={() => handleNavigation(child.href || '#')}
-                            className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-[#F6E824] hover:text-[#2C3188] transition-colors duration-200"
+                            className="block w-full text-left px-4 py-2 text-gray-700 hover:text-[#2C3188] transition-colors duration-200"
                           >
                             {child.label}
                           </button>
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
                 ) : (
                   <button
                     onClick={() => handleNavigation(item.href || '#')}
-                    className="text-gray-700 hover:text-[#2C3188] transition-colors duration-200 font-medium"
+                    className="text-gray-700 hover:text-[#2C3188] transition-colors duration-200"
                   >
                     {item.label}
                   </button>
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => handleNavigation('#admissions')}
-              className="hidden sm:inline-block font-bold bg-[#E31D28] text-white px-6 py-2 rounded-full hover:bg-[#c41e3a] transition-colors duration-200"
+              className="hidden sm:inline-block font-bold bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-400 transition-colors duration-200"
             >
               Matricúlate
             </button>
